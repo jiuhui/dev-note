@@ -1,0 +1,1 @@
+http://www.zsythink.net/archives/tag/awk   awk很好的教程 还有基础知识常用命令

@@ -81,12 +81,22 @@ public class SimpleMongoDbFactory implements DisposableBean, MongoDbFactory {
     }
 ```
 
+看到上述spring mongodb的配置之后我们只需要模拟他配置注入两个mongoTemplate就可以了
+
+配置文件
+
+```less
+#spring boot mongodb集群配置
+spring.data.mongodb.center.uri=mongodb://usksc_user:123456@127.0.0.1:27017,127.0.0.1:27017/usk-statistic-center
+spring.data.mongodb.shop.uri=mongodb://dev:123456@127.0.0.1:27017,127.0.0.1:27017/usk-shop
+```
+
 
 
 ```java
 /**
  * @author: fanjiuhui
- * @Date: 2019/8/13
+ * @Date: 2017/8/13
  * @Description:
  */
 @Configuration
@@ -106,7 +116,7 @@ public class ShopMongoConfig {
 ```java
 /**
  * @author: fanjiuhui
- * @Date: 2019/8/13
+ * @Date: 2017/8/13
  * @Description:
  */
 @Configuration
@@ -127,7 +137,7 @@ public class UskStatisticCenterMongoConfig {
 ```java
 /**
  * @author: fanjiuhui
- * @Date: 2019/8/13
+ * @Date: 2017/8/13
  * @Description:
  */
 public abstract class AbstractMongoConfig {
@@ -145,7 +155,7 @@ public abstract class AbstractMongoConfig {
 ```java
 /**
  * @author: fanjiuhui
- * @Date: 2019/8/13
+ * @Date: 2017/8/13
  * @Description:
  */
 @Configuration
@@ -163,7 +173,7 @@ public class ShopMongoConfig extends AbstractMongoConfig{
 ```java
 /**
  * @author: fanjiuhui
- * @Date: 2019/8/13
+ * @Date: 2017/8/13
  * @Description:
  */
 @Configuration
@@ -183,3 +193,4 @@ public class UskStatisticCenterMongoConfig extends AbstractMongoConfig{
 }
 ```
 
+通过这种方法如果我们配置mysql的多数据源也是一个道理
