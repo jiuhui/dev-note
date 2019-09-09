@@ -54,3 +54,17 @@ rpc BidiHello(stream HelloRequest) returns (stream HelloResponse){
 }
 ```
 
+
+
+gRPC整合gradle生成代码。
+
+1、首先到gRPC github网站 https://github.com/grpc/grpc-java  按照readme里面的指示，引入gradle依赖
+
+```groovy
+"io.grpc:grpc-netty-shaded:1.23.0",
+"io.grpc:grpc-protobuf:1.23.0",
+"io.grpc:grpc-stub:1.23.0"
+```
+
+2、Generated Code代码生成，把proto文件放在`src/main/proto` 和`src/test/proto（测试用的）` 目录下，同时加上下面的插件
+
