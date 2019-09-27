@@ -377,3 +377,47 @@ buffers数组是write()方法的入参，write()方法会按照buffer在数组�
     }
 ```
 
+## Selector
+
+Selector（选择器）是Java NIO中能够检测一到多个NIO通道，并能够知晓通道是否为诸如读写事件做好准备的组件。这样，一个单独的线程可以管理多个channel，从而管理多个网络连接。所以说selector是用来做网络连接的。
+
+### 为什么使用Selector?
+
+仅用单个线程来处理多个Channels的好处是，只需要更少的线程来处理通道。事实上，可以只用一个线程处理所有的通道。对于操作系统来说，线程之间上下文切换的开销很大，而且每个线程都要占用系统的一些资源（如内存）。因此，使用的线程越少越好。
+
+### Selector的创建
+
+通过调用Selector.open()方法创建一个Selector，如下：
+
+`Selector selector = Selector.open();`
+
+### 向Selector注册通道
+
+为了将Channel和Selector配合使用，必须将channel注册到selector上。通过SelectableChannel.register()方法来实现，如下：
+
+```java
+channel.configureBlocking(false);
+SelectionKey key = channel.register(selector,
+Selectionkey.OP_READ);
+```
+
+与Selector一起使用时，Channel必须处于非阻塞模式下。这意味着不能将FileChannel与Selector一起使用，因为FileChannel不能切换到非阻塞模式。而套接字通道都可以。
+
+注意register()方法的第二个参数。这是一个“interest集合”，意思是在通过Selector监听Channel时对什么事件感兴趣。可以监听四种不同类型的事件：
+
+1. Connect
+2. Accept
+3. Read
+4. Write
+
+通道触发了一个事件意思是该事件已经就绪。所以，某个channel成功连接到另一个服务器称为“连接就绪”。一个server socket  channel准备好接收新进入的连接称为“接收就绪”。一个有数据可读的通道可以说是“读就绪”。等待写数据的通道可以说是“写就绪”。
+
+这四种事件用SelectionKey的四个常量来表示：
+
+1. SelectionKey.OP_CONNECT
+2. SelectionKey.OP_ACCEPT
+3. SelectionKey.OP_READ
+4. SelectionKey.OP_WRITE
+
+示例，打开一个Selector，注册一个通道注册到这个Selector上(通道的初始化过程略去),然后持续监控这个Selector的四种事件（接受，连接，读，写）是否就绪。
+

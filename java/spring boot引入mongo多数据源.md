@@ -193,4 +193,10 @@ public class UskStatisticCenterMongoConfig extends AbstractMongoConfig{
 }
 ```
 
+还需要在启动的时候排除spring boot mongodb默认的配置类
+
+```
+@EnableAutoConfiguration(exclude = {MongoAutoConfiguration.class,      MongoDataAutoConfiguration.class})
+```
+
 通过这种方法如果我们配置mysql的多数据源也是一个道理
