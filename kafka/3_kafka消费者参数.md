@@ -24,3 +24,5 @@
 | auto.commit.interval.ms | 后台自动提交消费偏移量(后台定时提交)的间隔时间               | int     | 5000     | 5000                                                     |
 | key.deserializer        | 指定消息的key的反序列化类(需要实现Deserializer接口)          | class   | null     | org.apache.kafka.common.serialization.StringDeserializer |
 | value.deserializer      | 指定消息内容的反序列化类(需要实现Deseri                      |         |          |                                                          |
+
+https://blog.csdn.net/chaiyu2002/article/details/89472416    理解Kafka消费者属性的enable.auto.commit
