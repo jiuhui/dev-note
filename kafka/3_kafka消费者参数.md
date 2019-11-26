@@ -26,3 +26,5 @@
 | value.deserializer      | 指定消息内容的反序列化类(需要实现Deseri                      |         |          |                                                          |
 
 https://blog.csdn.net/chaiyu2002/article/details/89472416    理解Kafka消费者属性的enable.auto.commit
+
+https://blog.csdn.net/qq_33689414/article/details/80621572  kafka所有的参数
