@@ -26,10 +26,6 @@
 
 人工智能物联网云平台的开发。
 
-##### 主要技能
-
-git、mybatis、spring cloud 微服务、mongodb、redis、rabbitMQ、kafka、mqtt等。
-
 ##### 工作职责
 
 在业务服务组协助完成OKR制定、需求评审整理、技术选型以及主要实现。
@@ -38,8 +34,7 @@ git、mybatis、spring cloud 微服务、mongodb、redis、rabbitMQ、kafka、mq
   - 开发业务服务微服务网关
   - 所有基础服务升级为spring boot项目，接入云平台公共注册中心（eureka）、配置中心（Apollo）等公共组件
   - 基础服务之间的http调用升级为fegin
-- 数据采集回传系统开发，设备端采集埋点数据通过mqtt发送到数据服务，数据服务通过kafka发送到数据回传服务
-- 云知声技能平台开发，主要做一些技能的开发
+- 云知声技能平台、开发者网站 后台服务架构设计开发。
 
 ### 北京车联天下信息技术有限公司（2016.6~2018.6）
 
@@ -48,10 +43,6 @@ git、mybatis、spring cloud 微服务、mongodb、redis、rabbitMQ、kafka、mq
 ##### 项目描述
 
 主要系统有与Tbox交互的gateway系统、为手机APP提供API的接口的app-gateway、为后台web系统提供服务的portal。
-
-##### 主要技能
-
-git、nginx、spring 、mybatis、spring cloud 微服务、mongodb、redis、rabbitMQ、kafka、mqtt等。
 
 ##### 工作职责
 
@@ -66,10 +57,6 @@ git、nginx、spring 、mybatis、spring cloud 微服务、mongodb、redis、rab
 ### 北京桃谷信息技术有限公司（2014.10~2016.6）
 
 桃谷科技是专注于服务国内外医疗机构，营造大健康产业生态，借助移动技术、云计算、大数据的支撑，通过管理输出，搭建互联网开放服务平台，为用户提供全新体验的数字化健康服务。使得患者通过手机互联网随时方便预约挂号，查询病例，医患交流，健康知识了解的专业的互联网项目。
-
-##### 主要技能
-
-git、spring、spring mvc、nginx、shell、redis、mybatis、angularJS、H5等
 
 ##### 工作职责
 
