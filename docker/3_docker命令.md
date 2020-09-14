@@ -55,6 +55,7 @@ $ docker attach <容器 ID>
 
 ```bash
 $ docker exec <容器 ID> 
+docker exec -it 容器ID /bin/bash
 ```
 
 如果要导出本地某个容器，可以使用 **docker export** 命令。
@@ -100,6 +101,9 @@ $ docker images
 ```bash
 $ docker run -t -i ubuntu:15.10 /bin/bash 
 ```
+
+- **-i**: 交互式操作。
+- **-t**: 终端。
 
 获取一个新镜像，默认是从Docker Hup公共镜像源下载
 
